@@ -1,10 +1,10 @@
-if (window.location.hostname === 'www.reddit.com') {
-    window.location.hostname = 'old.reddit.com'
+if (window.location.host === 'old.reddit.com') {
+    document.querySelectorAll('.promoted').forEach(e => e.remove());
+    document.querySelectorAll('.premium-banner').forEach(e => e.remove());
 }
-var ads = document.querySelector(".promoted");
-var gold = document.querySelector(".premium-banner");
 
-ads.parentNode.removeChild(ads);
-gold.parentNode.removeChild(gold);
+if (window.location.hostname === 'www.reddit.com') {
+    window.location.hostname = 'old.reddit.com';
+}
 
 console.log("Hidden Ads Removed");
